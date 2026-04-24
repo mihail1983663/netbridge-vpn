@@ -1,160 +1,178 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NetBridge VPN — Быстрый доступ к интернету</title>
+    <title>NetBridge VPN</title>
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: #333;
-        }
-        .container {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-        h1 {
-            color: #667eea;
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 40px;
-            font-size: 1.2em;
-        }
-        .feature {
-            background: #f7f7f7;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 10px 0;
+            min-height: 100vh;
             display: flex;
+            justify-content: center;
             align-items: center;
         }
-        .feature:before {
-            content: "✅";
-            margin-right: 15px;
-            font-size: 1.5em;
-        }
-        .pricing {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+        .card {
+            background: white;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 20px;
             padding: 30px;
-            border-radius: 15px;
-            margin: 30px 0;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             text-align: center;
         }
-        .price {
-            font-size: 3em;
-            font-weight: bold;
-            margin: 20px 0;
+        h1 {
+            color: #1e3c72;
+            margin-bottom: 5px;
+            font-size: 28px;
         }
-        .button {
-            display: inline-block;
-            background: white;
-            color: #667eea;
-            padding: 15px 40px;
-            border-radius: 50px;
+        .subtitle {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+        .features {
+            text-align: left;
+            margin-bottom: 25px;
+            background: #f4f6f8;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .features div {
+            margin: 8px 0;
+            font-size: 15px;
+        }
+        .price-box {
+            border: 2px solid #1e3c72;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .price-box.free {
+            border-color: #27ae60;
+            background: #f0fff4;
+        }
+        .price-tag {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #333;
+        }
+        .price-desc {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: bold;
-            margin: 10px;
-            transition: transform 0.2s;
+            font-size: 16px;
+            transition: 0.2s;
+            cursor: pointer;
+            border: none;
+            box-sizing: border-box;
         }
-        .button:hover {
-            transform: scale(1.05);
-        }
-        .button-secondary {
-            background: #667eea;
+        .btn-telegram {
+            background: #0088cc;
             color: white;
-            border: 2px solid white;
         }
-        .section {
-            margin: 30px 0;
+        .btn-telegram:hover {
+            background: #0077b5;
         }
-        .section h2 {
-            color: #667eea;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 10px;
+        .btn-copy {
+            background: #eee;
+            color: #333;
+            margin-top: 10px;
+            font-size: 14px;
+            padding: 12px;
         }
-        .download-links a {
-            color: #667eea;
+        .copy-text {
+            font-family: monospace;
+            font-size: 18px;
+            background: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px dashed #999;
+            margin: 5px 0;
+            display: block;
+            user-select: all; /* Позволяет легко выделить текст */
+        }
+        .apps {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .apps a {
+            display: inline-block;
+            margin: 5px;
+            color: #1e3c72;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 14px;
         }
-        .download-links a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 600px) {
-            .container { padding: 20px; }
-            h1 { font-size: 1.8em; }
+        .badge {
+            background: #27ae60;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 12px;
+            vertical-align: middle;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+
+    <div class="card">
         <h1>🔐 NetBridge VPN</h1>
-        <p class="subtitle">Быстрый, безопасный и анонимный доступ к интернету</p>
+        <p class="subtitle">Быстрый и безопасный интернет</p>
 
-        <div class="section">
-            <h2>🌟 Почему выбирают нас?</h2>
-            <div class="feature">Серверы в Нидерландах, Германии, США</div>
-            <div class="feature">Безлимитный трафик</div>
-            <div class="feature">1 ключ = 3 устройства одновременно</div>
-            <div class="feature">Поддержка 24/7</div>
-            <div class="feature">Без логов</div>
+        <div class="features">
+            <div>🚀 Серверы: Нидерланды, Германия, США</div>
+            <div>♾️ Трафик: Безлимитный</div>
+            <div>📱 1 Ключ = 3 устройства</div>
+            <div>🛡️ Без логов и регистрации</div>
         </div>
 
-        <div class="pricing">
-            <h2>🎁 Пробный период</h2>
-            <div class="price">5 дней — БЕСПЛАТНО</div>
-            <p>Безлимитный трафик • 3 устройства • Полный функционал</p>
-            <a href="https://t.me/Mihail0383?text=Хочу+пробный+доступ+на+5+дней" class="button">Получить бесплатно</a>
+        <!-- Бесплатный тариф -->
+        <div class="price-box free">
+            <h3>🎁 Тестовый доступ</h3>
+            <div class="price-tag">5 ДНЕЙ</div>
+            <div class="price-desc">Бесплатно</div>
+            <a href="https://t.me/Mihail0383" class="btn btn-telegram">Написать в Telegram</a>
         </div>
 
-        <div class="pricing" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-            <h2>🔥 1 Месяц</h2>
-            <div class="price">300₽ / $3.5</div>
-            <p>Безлимитный трафик • 3 устройства • Все серверы</p>
-            <a href="https://t.me/Mihail0383?text=Хочу+купить+VPN+на+1+месяц" class="button">Купить сейчас</a>
+        <!-- Платный тариф -->
+        <div class="price-box">
+            <h3>🔥 Полная подписка</h3>
+            <div class="price-tag">300₽ <span style="font-size:16px; color:#888">/ мес</span></div>
+            <div class="price-desc">Оплата картой / USDT</div>
+            <a href="https://t.me/Mihail0383" class="btn btn-telegram">Купить сейчас</a>
         </div>
 
-        <div class="section">
-            <h2>📥 Как получить доступ?</h2>
-            <p><strong>Напиши мне в Telegram:</strong></p>
-            <p>👉 <a href="https://t.me/Mihail0383">@Mihail0383</a></p>
-            <p>Я помогу с оплатой и выдам персональный ключ доступа!</p>
+        <!-- Блок копирования -->
+        <div style="margin-top: 30px; background: #fff8e1; padding: 15px; border-radius: 10px;">
+            <p style="margin: 0 0 10px 0; font-weight: bold;">⚠️ Ссылка не нажимается?</p>
+            <p style="margin: 0 0 5px 0; font-size: 13px;">Скопируй юзернейм вручную:</p>
+            <span class="copy-text">@Mihail0383</span>
+            <p style="font-size: 12px; color: #666; margin-top: 5px;">Вставь в поиск Telegram</p>
         </div>
 
-        <div class="section">
-            <h2>📱 Как использовать?</h2>
-            <ol>
-                <li>Получи ключ в Telegram</li>
-                <li>Скачай приложение <strong>Happ VPN</strong>:
-                    <ul class="download-links">
-                        <li><a href="https://github.com/hiddify/hiddify-next/releases" target="_blank">Android / Windows (GitHub)</a></li>
-                        <li><a href="https://apps.apple.com/app/happ-vpn/id6443544395" target="_blank">iOS (App Store)</a></li>
-                    </ul>
-                </li>
-                <li>Открой приложение → нажми «+» → «Импортировать из буфера»</li>
-                <li>Вставь ключ и нажми «Подключить»</li>
-                <li>Готово! 🎉</li>
-            </ol>
-        </div>
-
-        <div class="section" style="text-align: center; background: #f7f7f7; padding: 20px; border-radius: 10px;">
-            <h2>📞 Поддержка</h2>
-            <p>По всем вопросам: <a href="https://t.me/Mihail0383">@Mihail0383</a></p>
-            <p style="margin-top: 10px; color: #666;">Отвечаю быстро! 💬</p>
+        <div class="apps">
+            <p style="margin-bottom: 10px; font-weight: bold;">📱 Скачать приложение Happ VPN:</p>
+            <a href="https://github.com/hiddify/hiddify-next/releases" target="_blank">Android / PC</a> • 
+            <a href="https://apps.apple.com/app/happ-vpn/id6443544395" target="_blank">iOS (iPhone)</a>
         </div>
     </div>
+
 </body>
 </html>
